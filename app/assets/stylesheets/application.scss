@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+
+div.register {
+  max-width: 600px;
+  padding-top: 100px;
+}

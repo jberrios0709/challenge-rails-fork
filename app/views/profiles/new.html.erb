@@ -1,0 +1,15 @@
+<div class="container-md register">
+  <p class="h1">Add profile</p>
+  <%= form_with model: @profile do |form| %>
+    <% @profile.errors.full_messages.each do |error| %>
+      <label class="text-danger"><%= error %></label>
+    <% end %>
+    <div class="mb-3">
+      <%= form.label :username, class: "form-label"%>
+      <%= form.text_field :username, class: "form-control" %>
+    </div>
+    <%= form.submit class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+

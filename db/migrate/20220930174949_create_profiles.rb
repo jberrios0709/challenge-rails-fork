@@ -5,5 +5,7 @@ class CreateProfiles < ActiveRecord::Migration[7.0]
       t.boolean :superuser, null: false, default: false
       t.timestamps
     end
+
+    add_index :profiles, :username, unique: true
   end
 end

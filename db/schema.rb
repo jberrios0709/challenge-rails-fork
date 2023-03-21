@@ -16,13 +16,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_30_175002) do
     t.boolean "superuser", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["username"], name: "index_profiles_on_username", unique: true
   end
 
   create_table "repositories", force: :cascade do |t|
     t.string "name", limit: 255, null: false
     t.text "tags", limit: 1024, null: false
+    t.integer "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_repositories_on_profile_id"
   end
 
   create_table "view_counts", force: :cascade do |t|
